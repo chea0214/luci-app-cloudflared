@@ -13,6 +13,9 @@ XHR.poll(3, '<%=url([[admin]], [[vpn]], [[cloudflared]], [[status]])%>', null,
         }
     }
 );
+	function handleClick() {
+		fetch('<%=url([[admin]], [[vpn]], [[cloudflared]], [[restart]])%>').then(res => res.text())
+	}
 //]]>
 </script>
 <style>.mar-10 {margin-left: 50px; margin-right: 10px;}</style>
@@ -20,4 +23,5 @@ XHR.poll(3, '<%=url([[admin]], [[vpn]], [[cloudflared]], [[status]])%>', null,
 	<p id="cloudflared_status">
 		<em><%:Collecting data...%></em>
 	</p>
+	<button id="restart-btn" class="cbi-button cbi-button-negative" onclick="handleClick()">重启服务</button>
 </fieldset>
