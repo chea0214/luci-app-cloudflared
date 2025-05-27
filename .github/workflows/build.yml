@@ -13,7 +13,7 @@ jobs:
           sudo timedatectl set-timezone Asia/Shanghai
           wget -qO /opt/sdk.tar.xz https://downloads.openwrt.org/releases/22.03.5/targets/rockchip/armv8/openwrt-sdk-22.03.5-rockchip-armv8_gcc-11.2.0_musl.Linux-x86_64.tar.xz
           tar -xJf /opt/sdk.tar.xz -C /opt
-          git clone https://github.com/chea0214/luci-app-cloudflared /opt/cf
+          git clone https://github.com/chea0214/luci-app-cloudflared.git /opt/cf
           cd /opt/openwrt-sdk*/package
           cp -R /opt/cf/luci-app-cloudflared .
           cd /opt/openwrt-sdk*
