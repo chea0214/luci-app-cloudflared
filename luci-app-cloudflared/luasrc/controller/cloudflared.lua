@@ -14,9 +14,13 @@ entry({"admin", "vpn", "cloudflared", "edit"},cbi("cloudflared/edit"), _("yaml�
 entry({"admin", "vpn", "cloudflared", "log"},form("cloudflared/info"), _("日志"), 3)
 
 entry({"admin","vpn","cloudflared","status"},call("act_status"))
+entry({"admin","vpn","cloudflared","restart"},call("act_restart"))
 end
 
-
+function act_restart()
+  os.execute("/etc/init.d/cloudflared restart")
+  luci.http.write("插件已重启")
+end
 
 function act_status()
 local e={}
