@@ -1,5 +1,13 @@
+
 config cloudflared 'config'
-	    option cmdenabled '0'
-	    option enabled '0'
-     	option loglevel 'info'
-	
+	option enabled '0'
+	option config '/etc/cloudflared/config.yml'
+	option origincert '/etc/cloudflared/cert.pem'
+	option protocol 'http2'
+	option logfile '/var/log/cloudflared.log'
+	option cmdenabled '1'
+	list custom_cmd 'tunnel'
+	list custom_cmd '--no-autoupdate'
+	list custom_cmd '--logfile /tmp/cloudflared.info'
+	list custom_cmd 'run'
+	option cfbin '/usr/bin/cloudflared'
