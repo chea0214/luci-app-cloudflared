@@ -10,10 +10,13 @@ entry({"admin","vpn"}, firstchild(), "VPN", 49).dependent = false
 entry({"admin", "vpn", "cloudflared"},firstchild(), _("Cloudflared")).dependent = false
 
 entry({"admin", "vpn", "cloudflared", "general"},cbi("cloudflared/settings"), _("配置"), 1)
-entry({"admin", "vpn", "cloudflared", "log"},form("cloudflared/info"), _("日志"), 2)
+entry({"admin", "vpn", "cloudflared", "edit"},cbi("cloudflared/edit"), _("yaml配置"), 2)
+entry({"admin", "vpn", "cloudflared", "log"},form("cloudflared/info"), _("日志"), 3)
 
 entry({"admin","vpn","cloudflared","status"},call("act_status"))
 end
+
+
 
 function act_status()
 local e={}
